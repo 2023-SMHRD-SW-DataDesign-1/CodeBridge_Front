@@ -12,7 +12,7 @@ import { updateAllInfo } from "../actions/updateAllInfo";
 const Nav = () => {
   // 스프링 주소
   const baseUrl = process.env.REACT_APP_BASE_URL;
-  
+
 
   // 로그인했으면 상단 로그인,회원가입변경
   const id = sessionStorage.getItem("memberId");
@@ -42,7 +42,7 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    if(active === false){
+    if (active === false) {
       setActive(true);
     }
     memberSearching();
@@ -120,6 +120,20 @@ const Nav = () => {
     setActive(!active);
   };
 
+  const studentLogin = () => {
+    sessionStorage.setItem("memberId", 'gkrtod@naver.com');
+    sessionStorage.setItem("user_name", '박송이')
+    sessionStorage.setItem("user_nick", '송이버섯')
+    window.location.href = "/";
+  }
+
+  const teacherLogin = () => {
+    sessionStorage.setItem("memberId", 'teacher@naver.com');
+    sessionStorage.setItem("user_name", '박수현')
+    sessionStorage.setItem("user_nick", '수혀니')
+    window.location.href = "/";
+  }
+
   return (
     <>
       <div className={style.Wrap_container}>
@@ -191,26 +205,10 @@ const Nav = () => {
               </li>
             ) : (
               <li>
-                <Link to={"/Login"}>로그인</Link>
+                {/* <Link to={"/Login"}>로그인</Link> */}
+                <a onClick={studentLogin}>학생 로그인</a>
               </li>
             )}
-            {/* {id ? (
-              <li className={style.right_container_profile_text}>
-                {(isClass || userInfo.hasclass) && userInfo.user_type === 1 ? (
-                  <li className={style.right_container_profile_text}>
-                    <Link to={"/DashAdmin"}>대시보드</Link>
-                  </li>
-                ) : (
-                  <li className={style.right_container_profile_text}>
-                    <Link to={"/DashBoard"}>대시보드</Link>
-                  </li>
-                )}
-              </li>
-            ) : (
-              <li>
-                <Link to={"/Login"}>로그인</Link>
-              </li>
-            )} */}
 
             {id ? (
               <li
@@ -225,7 +223,8 @@ const Nav = () => {
               </li>
             ) : (
               <li>
-                <Link to={"/Join"}>회원가입</Link>
+                {/* <Link to={"/Join"}>회원가입</Link> */}
+                <a onClick={teacherLogin}>선생 로그인</a>
               </li>
             )}
           </ul>

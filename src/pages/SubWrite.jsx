@@ -23,36 +23,37 @@ const SubWrite = () => {
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        alert('미지원')
+        // e.preventDefault();
 
-        if (!title || !quillValue) {
-            alert("모든 값을 채워주세요");
-            return; // 값이 비어있으면 함수 종료
-        }
+        // if (!title || !quillValue) {
+        //     alert("모든 값을 채워주세요");
+        //     return; // 값이 비어있으면 함수 종료
+        // }
 
-        try {
-            let obj = {
-                sub_title: title,
-                user_id: sessionStorage.getItem("memberId"),
-                sub_lang: language,
-                sub_content: quillValue
-            };
+        // try {
+        //     let obj = {
+        //         sub_title: title,
+        //         user_id: sessionStorage.getItem("memberId"),
+        //         sub_lang: language,
+        //         sub_content: quillValue
+        //     };
 
-            const response = await axios.post(
-                `${baseUrl}/CodeBridge/sub/write`,
-                obj
-            );
-            if (response) {
-                alert('작성 성공')
-                dispatch(updateQuillValue());
-                window.location.reload();
-            } else {
-                alert('작성 실패')
-            }
+        //     const response = await axios.post(
+        //         `${baseUrl}/CodeBridge/sub/write`,
+        //         obj
+        //     );
+        //     if (response) {
+        //         alert('작성 성공')
+        //         dispatch(updateQuillValue());
+        //         window.location.reload();
+        //     } else {
+        //         alert('작성 실패')
+        //     }
 
-        } catch (error) {
-            console.error('통신에러', error);
-        }
+        // } catch (error) {
+        //     console.error('통신에러', error);
+        // }
 
     };
 

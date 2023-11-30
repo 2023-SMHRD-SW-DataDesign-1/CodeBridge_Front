@@ -17,27 +17,28 @@ const TestWrite = () => {
 
 
   const testSub = async (e) => {
-    e.preventDefault();
-    let obj = {
-      test_title: test_title,
-      test_level: test_level,
-      test_lang: test_lang,
-      test_description: test_description,
-      // test_input: test_input,
-      test_condition: testConditionList,
-    };
+    alert('미지원')
+    // e.preventDefault();
+    // let obj = {
+    //   test_title: test_title,
+    //   test_level: test_level,
+    //   test_lang: test_lang,
+    //   test_description: test_description,
+    //   // test_input: test_input,
+    //   test_condition: testConditionList,
+    // };
 
-    try {
-      const res = await axios.post(`${baseUrl}/CodeBridge/test/write`, obj);
-      if (res.data == "1") {
-        alert("시험등록성공");
-        window.location.href = "/";
-      } else {
-        return alert("시험등록실패!");
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    // try {
+    //   const res = await axios.post(`${baseUrl}/CodeBridge/test/write`, obj);
+    //   if (res.data == "1") {
+    //     alert("시험등록성공");
+    //     window.location.href = "/";
+    //   } else {
+    //     return alert("시험등록실패!");
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
 
   };
 
@@ -60,17 +61,18 @@ const TestWrite = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const gtpTestWrite = async () => {
-    setGptTest("");
-    setIsLoading(true);
+    alert('미지원')
+    // setGptTest("");
+    // setIsLoading(true);
 
-    try {
-      const res = await axios.post(`${pyUrl}/test`);
-      setGptTest(res.data);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setIsLoading(false); // 호출 완료 시 로딩 종료
-    }
+    // try {
+    //   const res = await axios.post(`${pyUrl}/test`);
+    //   setGptTest(res.data);
+    // } catch (error) {
+    //   console.error(error);
+    // } finally {
+    //   setIsLoading(false); // 호출 완료 시 로딩 종료
+    // }
   }
 
 

@@ -101,6 +101,7 @@
             background-color: inherit;
             border-radius: 10px;
             transition-duration: 150ms;
+            cursor: pointer;
 
             &:hover {
               background-color: $bg-grayScale;
@@ -119,6 +120,7 @@
             background-color: $main-color;
             border-radius: 10px;
             transition-duration: 150ms;
+            cursor: pointer;
 
             &:hover {
               background-color: $sub-color;

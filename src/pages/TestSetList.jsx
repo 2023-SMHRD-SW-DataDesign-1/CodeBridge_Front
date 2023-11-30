@@ -74,31 +74,32 @@ const TestList = () => {
   const navigate = useNavigate();
   // 고른 문제 출제하기
   const subTestList = async () => {
+    alert('미지원');
 
-    if (selectedTestNums.length === 0) {
-      alert("선택한 과목이 없습니다. 과목을 선택해주세요.");
-      return;
-    }
+    // if (selectedTestNums.length === 0) {
+    //   alert("선택한 과목이 없습니다. 과목을 선택해주세요.");
+    //   return;
+    // }
 
-    const selectedTestNumsString = selectedTestNums.join(",");
-    let obj = {
-      sub_num: parseInt(sub_num),
-      test_num: selectedTestNums,
-    };
-    try {
-      const res = await axios.post(
-        `${baseUrl}/CodeBridge/subjecTtest/submit`,
-        obj
-      );
-      if (res.data == "success") {
-        alert('출제 완료')
-        navigate("/DashAdmin");
-      } else {
-        alert('출제 실패')
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    // const selectedTestNumsString = selectedTestNums.join(",");
+    // let obj = {
+    //   sub_num: parseInt(sub_num),
+    //   test_num: selectedTestNums,
+    // };
+    // try {
+    //   const res = await axios.post(
+    //     `${baseUrl}/CodeBridge/subjecTtest/submit`,
+    //     obj
+    //   );
+    //   if (res.data == "success") {
+    //     alert('출제 완료')
+    //     navigate("/DashAdmin");
+    //   } else {
+    //     alert('출제 실패')
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
 

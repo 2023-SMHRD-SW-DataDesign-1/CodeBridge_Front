@@ -74,21 +74,22 @@ const DashAdmin = () => {
 
   // 승인하기
   const acceptStu = async (user_id) => {
-    let obj = {
-      user_id: user_id,
-      sub_num: subNumList
-    }
-    try {
-      const res = await axios.post(`${baseUrl}/CodeBridge/class/accept`, obj);
-      if (res.data == "success") {
-        alert("전환 성공");
-        window.location.reload();
-      } else {
-        alert("전환 실패");
-      }
-    } catch (error) {
-      alert(`통신오류 ${error}`);
-    }
+    alert('미지원');
+    // let obj = {
+    //   user_id: user_id,
+    //   sub_num: subNumList
+    // }
+    // try {
+    //   const res = await axios.post(`${baseUrl}/CodeBridge/class/accept`, obj);
+    //   if (res.data == "success") {
+    //     alert("전환 성공");
+    //     window.location.reload();
+    //   } else {
+    //     alert("전환 실패");
+    //   }
+    // } catch (error) {
+    //   alert(`통신오류 ${error}`);
+    // }
   };
 
   const UnApprovedItem = ({ props }) => {
@@ -133,27 +134,27 @@ const DashAdmin = () => {
 
     // ide 부여
     const giveIde = async () => {
+      alert('미지원')
 
+      // const confirmSubmit = window.confirm("IDE를 부여 하시겠습니까?");
 
-      const confirmSubmit = window.confirm("IDE를 부여 하시겠습니까?");
+      // if (confirmSubmit) {
+      //   let obj = {
+      //     server_url: props,
+      //     user_id: selectUser
+      //   }
+      //   try {
+      //     const res = await axios.post(`${baseUrl}/CodeBridge/member/giveIde`, obj);
+      //     if (res.data == "success") {
+      //       alert("부여 완료")
+      //       window.location.reload();
+      //     } else {
+      //       alert("부여 실패")
+      //     }
+      //   } catch (error) {
 
-      if (confirmSubmit) {
-        let obj = {
-          server_url: props,
-          user_id: selectUser
-        }
-        try {
-          const res = await axios.post(`${baseUrl}/CodeBridge/member/giveIde`, obj);
-          if (res.data == "success") {
-            alert("부여 완료")
-            window.location.reload();
-          } else {
-            alert("부여 실패")
-          }
-        } catch (error) {
-
-        }
-      }
+      //   }
+      // }
     }
 
     return (

@@ -94,22 +94,25 @@ const ClassDetail = () => {
 
 
   const registClass = async () => {
-    let obj = {
-      class_num: class_num,
-      user_id: sessionStorage.getItem("memberId"),
-      user_name: sessionStorage.getItem("user_name")
-    };
-    try {
-      const res = await axios.post(`${baseUrl}/CodeBridge/class/regist`, obj);
-      if (res.data == "success") {
-        alert("등록 성공");
-        window.location.reload();
-      } else {
-        alert("등록 실패");
-      }
-    } catch (error) {
-      alert(`통신오류 ${error}`);
-    }
+
+    alert('미지원');
+
+    // let obj = {
+    //   class_num: class_num,
+    //   user_id: sessionStorage.getItem("memberId"),
+    //   user_name: sessionStorage.getItem("user_name")
+    // };
+    // try {
+    //   const res = await axios.post(`${baseUrl}/CodeBridge/class/regist`, obj);
+    //   if (res.data == "success") {
+    //     alert("등록 성공");
+    //     window.location.reload();
+    //   } else {
+    //     alert("등록 실패");
+    //   }
+    // } catch (error) {
+    //   alert(`통신오류 ${error}`);
+    // }
   };
 
 

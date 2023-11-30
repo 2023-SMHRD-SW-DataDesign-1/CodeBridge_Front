@@ -168,12 +168,15 @@ const TestDetail = () => {
   };
 
   const handleShow = (item) => {
-    const confirmSubmit = window.confirm("제출할 경우 더이상 수정이 불가능합니다");
 
-    if (confirmSubmit) {
-      setShow(true);
-      subCodeList();
-    }
+    alert('미지원');
+
+    // const confirmSubmit = window.confirm("제출할 경우 더이상 수정이 불가능합니다");
+
+    // if (confirmSubmit) {
+    //   setShow(true);
+    //   subCodeList();
+    // }
   };
 
   const realhandleShow = (item) => {
@@ -181,27 +184,30 @@ const TestDetail = () => {
   };
 
   const finalSubmit = async () => {
-    const confirmSubmit = window.confirm("정말 종료하시겠습니까?");
 
-    if (!confirmSubmit) {
-      return;
-    }
-    let obj = {
-      sub_num: sub_num,
-      user_id: sessionStorage.getItem("memberId")
-    }
-    try {
-      const res = await axios.post(`${baseUrl}/CodeBridge/mark/submit`, obj);
-      if (res.data == "success") {
-        alert("제출완료")
-        navigate("/DashBoard")
-      } else {
-        alert("제출실패")
-      }
+    alert('미지원');
 
-    } catch (error) {
+    // const confirmSubmit = window.confirm("정말 종료하시겠습니까?");
 
-    }
+    // if (!confirmSubmit) {
+    //   return;
+    // }
+    // let obj = {
+    //   sub_num: sub_num,
+    //   user_id: sessionStorage.getItem("memberId")
+    // }
+    // try {
+    //   const res = await axios.post(`${baseUrl}/CodeBridge/mark/submit`, obj);
+    //   if (res.data == "success") {
+    //     alert("제출완료")
+    //     navigate("/DashBoard")
+    //   } else {
+    //     alert("제출실패")
+    //   }
+
+    // } catch (error) {
+
+    // }
   }
 
   return (
@@ -262,7 +268,7 @@ const TestDetail = () => {
               <button
                 className={`${style.code_sub_btn} ${isSubmitDisabled[selectedTestIndex] ? style.disabled : ""}`}
                 onClick={() => handleShow(selectedTestIndex)}
-                disabled={isSubmitDisabled[selectedTestIndex]} // 이 부분을 추가하세요
+                disabled={isSubmitDisabled[selectedTestIndex]} 
               >
                 제출하기
               </button>

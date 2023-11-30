@@ -165,20 +165,23 @@ const MarkList = () => {
     }
 
     const objectionBtn = async (index) => {
-      let obj = {
-        sub_num: props.sub_num,
-        test_num: props.test_num,
-        user_id: props.user_id
-      }
-      try {
-        const res = await axios.post(`${baseUrl}/CodeBridge/mark/mark-objection`, obj);
-        if (res.data == "success") {
-          alert("이의신청 완료")
-          window.location.reload();
-        }
-      } catch (error) {
 
-      }
+      alert('미지원');
+
+      // let obj = {
+      //   sub_num: props.sub_num,
+      //   test_num: props.test_num,
+      //   user_id: props.user_id
+      // }
+      // try {
+      //   const res = await axios.post(`${baseUrl}/CodeBridge/mark/mark-objection`, obj);
+      //   if (res.data == "success") {
+      //     alert("이의신청 완료")
+      //     window.location.reload();
+      //   }
+      // } catch (error) {
+
+      // }
     }
 
 

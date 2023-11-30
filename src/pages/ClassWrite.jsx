@@ -40,44 +40,45 @@ const ClassWrite = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    alert("미지원")
+    // e.preventDefault();
 
-    // state 값들을 확인하고, 비어있는 값이 있는지 확인
-    if (!title || !target || !startDate || !endDate || !quillValue || !croppedImage) {
-      alert("값이 모두 입력되지 않았습니다. 모든 필수 항목을 입력해주세요.");
-      return;
-    }
+    // // state 값들을 확인하고, 비어있는 값이 있는지 확인
+    // if (!title || !target || !startDate || !endDate || !quillValue || !croppedImage) {
+    //   alert("값이 모두 입력되지 않았습니다. 모든 필수 항목을 입력해주세요.");
+    //   return;
+    // }
 
-    const croppedImageDataUrl = await handleSaveCroppedImage(croppedImage);
+    // const croppedImageDataUrl = await handleSaveCroppedImage(croppedImage);
 
 
-    let obj = {
-      user_id: sessionStorage.getItem("memberId"),
-      class_title: title,
-      img_url: croppedImageDataUrl,
-      class_content: quillValue,
-      class_target: target,
-      curriculum: additionalInputs,
-      class_startdate: startDate,
-      class_enddate: endDate,
-      sub_num: subNumList.join(","),
-    };
+    // let obj = {
+    //   user_id: sessionStorage.getItem("memberId"),
+    //   class_title: title,
+    //   img_url: croppedImageDataUrl,
+    //   class_content: quillValue,
+    //   class_target: target,
+    //   curriculum: additionalInputs,
+    //   class_startdate: startDate,
+    //   class_enddate: endDate,
+    //   sub_num: subNumList.join(","),
+    // };
 
-    try {
-      const response = await axios.post(
-        `${baseUrl}/CodeBridge/class/write`,
-        obj
-      );
-      if (response.data == "success") {
-        alert("작성 완료");
-        dispatch(updateQuillValue());
-        window.location.reload();
-      } else {
-        alert("작성 실패");
-      }
-    } catch (error) {
-      console.error("통신 오류", error);
-    }
+    // try {
+    //   const response = await axios.post(
+    //     `${baseUrl}/CodeBridge/class/write`,
+    //     obj
+    //   );
+    //   if (response.data == "success") {
+    //     alert("작성 완료");
+    //     dispatch(updateQuillValue());
+    //     window.location.reload();
+    //   } else {
+    //     alert("작성 실패");
+    //   }
+    // } catch (error) {
+    //   console.error("통신 오류", error);
+    // }
   };
 
   const subListByName = async (e) => {

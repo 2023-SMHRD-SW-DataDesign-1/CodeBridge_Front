@@ -210,24 +210,27 @@ const SetInfo = () => {
 
 
   const idDelete = async (e) => {
-    e.preventDefault();
-    const confirmDelete = window.confirm("삭제하시겠습니까?");
-    if (confirmDelete) {
-      let mem = {
-        user_id: id,
-      };
-      const response = await axios.post(
-        `${baseUrl}/CodeBridge/member/iddelete`,
-        mem
-      );
-      if (response.data === 1) {
-        sessionStorage.removeItem("memberId");
-        window.location.href = "/";
-        alert("성공적으로 삭제되었습니다.");
-      }
-    } else {
-      return;
-    }
+
+    alert('미지원')
+
+    // e.preventDefault();
+    // const confirmDelete = window.confirm("삭제하시겠습니까?");
+    // if (confirmDelete) {
+    //   let mem = {
+    //     user_id: id,
+    //   };
+    //   const response = await axios.post(
+    //     `${baseUrl}/CodeBridge/member/iddelete`,
+    //     mem
+    //   );
+    //   if (response.data === 1) {
+    //     sessionStorage.removeItem("memberId");
+    //     window.location.href = "/";
+    //     alert("성공적으로 삭제되었습니다.");
+    //   }
+    // } else {
+    //   return;
+    // }
   };
 
   // 수정버튼 클릭시 div박스 display : flex 변경함수
