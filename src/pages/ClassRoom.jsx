@@ -176,7 +176,7 @@ export const ClassRoom = () => {
 
   // 강사화면 메서드
   const clickTeacher = () => {
-    window.open("http://211.227.224.186:2031/?folder=/home/smhrd/class/ClassRoomTeacher");
+    window.open("http://43.200.137.185:8083/?folder=/home/ubuntu/CodeBridge/classroom");
     // window.open(teacherLive);
   }
 
@@ -225,9 +225,9 @@ export const ClassRoom = () => {
       <div className={style.main_container}>
         <div className={style.left_container_wrapper}>
           {userInfo.user_type == 1 ?
-            <iframe src={`${userInfo.server_url}?folder=/home/smhrd/class/ClassRoomTeacher`}></iframe>
+            <iframe src={`${userInfo.server_url}?folder=/home/ubuntu/CodeBridge/classroom`}></iframe>
             :
-            <iframe src={`${userInfo.server_url}?folder=/home/smhrd/class/ClassRoom`}></iframe>
+            <iframe src={`${userInfo.server_url}?folder=/home/ubuntu/CodeBridge/classroom`}></iframe>
           }
         </div>
         <div className={style.main_container_right}>
